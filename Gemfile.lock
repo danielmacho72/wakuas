@@ -77,6 +77,7 @@ GEM
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
+    jwt (1.5.6)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -144,6 +145,7 @@ GEM
     selenium-webdriver (3.4.3)
       childprocess (~> 0.5)
       rubyzip (~> 1.0)
+    simple_command (0.0.9)
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -188,12 +190,14 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise (~> 4.3)
   jbuilder (~> 2.5)
+  jwt
   listen (>= 3.0.5, < 3.2)
   pg (~> 0.21)
   puma (~> 3.7)
   rails (~> 5.1.1)
   sass-rails (~> 5.0)
   selenium-webdriver
+  simple_command
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)

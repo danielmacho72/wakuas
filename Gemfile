@@ -24,6 +24,12 @@ gem 'uglifier', '>= 1.3.0'
 # Use Devise for Authentication Models
 gem 'devise', '~> 4.3'
 
+# Use JWT to allow token based authentication
+gem 'jwt'
+
+# The simple command gem is an easy way of creating services
+gem 'simple_command'
+
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
