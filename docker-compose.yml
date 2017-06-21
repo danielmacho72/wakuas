@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  auth:
+    build: ./
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - 5102:3000
+    environment:
+      POSTGRES_PASSWORD:
+      SMTP_address: smtp
+      SMTP_port: 25
+      MAIL_LINK_HOST: "localhost:5002"
+      MAIL_LINK_PROTO: "http"
+      MAIL_SENDER: "from@sample.com"
+    depends_on:
+      - db
+      - smtp
+  db:
+    image: postgres:9
+    ports: 
+      - 5432:5432
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD:
+  smtp:
+    build: "https://github.com/namshi/docker-smtp.git#master"
+    ports:
+      - 25:25
+
