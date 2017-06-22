@@ -5,5 +5,38 @@
     "version": "v1"
   },
   "paths": {
+    "/authenticate.json": {
+      "post": {
+        "summary": "Authenticates returning JWT",
+        "tags": [
+          "Auth"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "password",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "jwt found"
+          },
+          "401": {
+            "description": "invalid request"
+          }
+        }
+      }
+    }
   }
 }
