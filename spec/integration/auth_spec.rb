@@ -8,20 +8,12 @@ describe 'Auth Server API' do
     post 'Authenticates returning JWT' do
       tags 'Auth'
       consumes 'application/json'
-      parameter name: :email, in: :path, type: :string
-      parameter name: :password, in: :path, type: :string
 
       response '200', 'jwt found' do
-        let(:email) { 'email@domain.com' }
-        let(:password) { 'password' }
-
         run_test!
       end
 
-      response '401', 'invalid request' do
-        let(:email) { 'email@domain.com' }
-        let(:password) { 'password' }
-
+      response '401', 'invalid credentials' do
         run_test!
       end
     end

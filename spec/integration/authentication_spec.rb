@@ -4,12 +4,13 @@ require 'swagger_helper'
 describe 'Autheticate' do
   	let! (:user) { FactoryGirl.create(:user) }
   	let(:claims_id) { JWT.decode(response_body['auth_token'], Rails.application.secrets.secret_key_base).first["user_id"] }
-  	let(:json_params) { "{\"email\":\"#{user.email}\",\"password\":\"#{user.password}\"}" }
-
+  	let(:valid_headers) { { "HTTP_AUTHORIZATION": "#{ActionController::HttpAuthentication::Basic.encode_credentials(user.email, 'password') }" } }
+  	let(:invalid_headers) { { "HTTP_AUTHORIZATION": "#{ActionController::HttpAuthentication::Basic.encode_credentials(user.email, 'wrong_password') }" } }
+	
 	describe "POST" do
   		context "with valid params" do
     		before do
-    			post "/authenticate.json?email=#{user.email}&password=#{user.password}"
+    			post "/authenticate.json", headers: valid_headers 			
     		end
 
     		it "returns valid JWT token" do
@@ -21,7 +22,7 @@ describe 'Autheticate' do
 
 		describe "with invalid params" do
     		before do
-      			post "/authenticate.json?email=#{user.email}&password=invalid"
+      			post "/authenticate.json", headers: invalid_headers
     		end
 
     		it "returns invalid JWT token" do
