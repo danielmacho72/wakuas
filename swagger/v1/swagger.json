@@ -1,0 +1,28 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "API V1",
+    "version": "v1"
+  },
+  "paths": {
+    "/authenticate.json": {
+      "post": {
+        "summary": "Authenticates returning JWT",
+        "tags": [
+          "Auth"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "jwt found"
+          },
+          "401": {
+            "description": "invalid credentials"
+          }
+        }
+      }
+    }
+  }
+}
