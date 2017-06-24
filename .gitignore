@@ -20,15 +20,18 @@
 /tmp
 
 # Ignore RubyMine project track files
-.idea/*
-.idea/.generators
-.idea/ad2you.iml
-.idea/misc.xml
-.idea/modules.xml
-.idea/candid8s.iml
-.vagrant/*
+/.idea/*
+/.idea/.generators
+/.idea/ad2you.iml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/candid8s.iml
+/.vagrant/*
 
 # Ignore other folder
 other
 other/*
+
+/.byebug*
+
 

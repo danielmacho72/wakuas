@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# Swagger tooling for Rails API's
+gem 'rswag'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
@@ -23,6 +25,12 @@ gem 'uglifier', '>= 1.3.0'
 
 # Use Devise for Authentication Models
 gem 'devise', '~> 4.3'
+
+# Use JWT to allow token based authentication
+gem 'jwt'
+
+# The simple command gem is an easy way of creating services
+gem 'simple_command'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -47,6 +55,24 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+
+    # factory_girl provides a framework and DSL for defining and using factories - less error-prone,
+  # more explicit, and all-around easier to work with than fixtures.
+  gem 'factory_girl'
+  gem 'factory_girl_rails'
+
+  # Faker, a port of Data::Faker from Perl, is used to easily generate fake data:
+  # names, addresses, phone numbers, etc.
+  gem 'faker'
+
+  # Strategies for cleaning databases. Can be used to ensure a clean state for testing.
+  gem 'database_cleaner'
+
+  # RSpec and RSpec for Rails
+  gem 'rspec'
+  gem 'rspec-rails'
+  gem 'shoulda'
+  gem 'shoulda-matchers'
 end
 
 group :development do
