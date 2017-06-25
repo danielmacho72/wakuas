@@ -11,4 +11,10 @@ class AuthenticationController < ApplicationController
       end
     end
   end
+
+  def validate
+    authenticate_request
+
+    render json: { token_is_valid: true } if @current_user
+  end
 end
