@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   root to: "home#index"
 
   post 'authenticate', to: 'authentication#authenticate'
+  get 'validate', to: 'authentication#validate'
 end

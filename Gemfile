@@ -71,6 +71,7 @@ group :development, :test do
   # RSpec and RSpec for Rails
   gem 'rspec'
   gem 'rspec-rails'
+  gem 'rails-controller-testing'
   gem 'shoulda'
   gem 'shoulda-matchers'
 end
