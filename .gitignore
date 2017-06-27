@@ -33,5 +33,6 @@ other
 other/*
 
 /.byebug*
+/spec/examples.txt
 
 
