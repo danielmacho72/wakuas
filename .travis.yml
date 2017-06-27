@@ -5,11 +5,11 @@ bundler_args: '--without production development'
 rvm:
   - 2.4.1
 
-services:  
-  - docker
+#services:  
+#  - docker
 
 env:
-  DOCKER_COMPOSE_VERSION: 1.11.2
+  DOCKER_COMPOSE_VERSION: 1.14.0
   POSTGRES_PASSWORD: mysecretpassword3
   SMARTHOST_ADDRESS: smtp.mandrillapp.com
   SMARTHOST_PORT: 587
