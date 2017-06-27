@@ -64,4 +64,4 @@ before_install:
 script:
   - docker version
   - docker-compose version
-  - docker exec -it `docker ps|grep auth|rev| cut -d' ' -f 1 | rev` rake
+  #- docker exec -it `docker ps|grep auth|rev| cut -d' ' -f 1 | rev` rake
