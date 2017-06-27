@@ -9,7 +9,7 @@ services:
   - docker
 
 env:
-  DOCKER_COMPOSE_VERSION: 1.14.0
+  DOCKER_COMPOSE_VERSION: 1.11.2
   POSTGRES_PASSWORD: mysecretpassword3
   SMARTHOST_ADDRESS: smtp.mandrillapp.com
   SMARTHOST_PORT: 587
