@@ -70,5 +70,7 @@ before_install:
 script:
   - docker version
   - docker-compose version
+  - docker ps
+  - docker ps | grep auth
   - docker_auth=$(docker ps|grep auth|rev|cut -d' ' -f 1 | rev)
   - docker exec -it $docer_auth rake
